@@ -28,10 +28,19 @@ Components:
 
 At first I will design a setup for our client side server itself.
 So my clients desktop app,website will be having following 4 important Components:
-1.)Filewatcher:- This will keep an eye on whether there is some file uploaded currently or not
-2.) Chunker:-This will divide the files into multiple chunks
-3.)Indexer:-This will craete indexing or say will prepare the metadata
-4.) Internal DB:- this will store the data related to the file loading
+1.)Filewatcher:- This will keep an eye on whether there is some file uploaded currently or not.This notifies the chunker and 
+indexer that there is one new file that has arrived in the required folder
+
+2.) Chunker:-This will divide the files into multiple chunks and uploads it to the cloud say azure which will act here as an storage 
+service. Chunker does this uniquely by assigning a hashcode to each and every chunks that it uploads.
+3.)Indexer:-This will craete indexing or say will prepare the metadata. The hashcode created when chunker was uploading the 
+file to cloud and the url that we will get in return will be stored here for record purpose inside the inetrnal DB
+4.) Internal DB:- this will store the data related to the file loading. say the hashcode and url.
+
+5.) Indexer:- This component will also notify a mesage queue(rabbit mq,kafka) that there is one new file that has been added.
+6.) Message queue:- This message queue will be event driven service and will 
+a sync service which will store the chuncks hashcode and all the details related to it in the database or cache and the notify 
+the message queue back to notify the other devices in the cluster to keep them up to date.
 
 
 
