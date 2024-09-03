@@ -13,9 +13,26 @@ Clients:
 mobile,desktop
 
 Devices in cluster
-1.) 1 million devices
+1.) 100 million devices(1 million active daily)
 2.) 1 file per day per device
 3.)avg file size 5mb, max 15 gigs
+
+Math=1 million* 15 gigabyte=15 petabyte
+QPS=1 million/24*3600=11
+peak QPS=15
+traffic=1million*5mb=5tb
+
+
+
+Components:
+
+At first I will design a setup for our client side server itself.
+So my clients desktop app,website will be having following 4 important Components:
+1.)Filewatcher:- This will keep an eye on whether there is some file uploaded currently or not
+2.) Chunker:-This will divide the files into multiple chunks
+3.)Indexer:-This will craete indexing or say will prepare the metadata
+4.) Internal DB:- this will store the data related to the file loading
+
 
 
 
