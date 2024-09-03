@@ -1,1 +1,23 @@
-Functional requirement
+Functional requirement:
+1.) uploading
+2.) dowloading
+3.)Sync between different devices
+4.)Notifications
+
+Non Functional requirement:
+1.)High availability
+2.)High consistency
+3.)Scaling purpose will be handled after getting an overview of no. of devices in the cluster
+
+Clients:
+mobile,desktop
+
+Devices in cluster
+1.) 1 million devices
+2.) 1 file per day per device
+3.)avg file size 5mb, max 15 gigs
+
+
+
+
+
