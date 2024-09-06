@@ -44,6 +44,11 @@ the message queue back to notify the other devices in the cluster to keep them u
 
 
 
+1.) design pattern:
+To take the file decide that what is the format of the files, we will use adapter design pattern
+
+
+
 
 
 
