@@ -1,3 +1,3 @@
-interface MediaPlayer {
-    void play(String audioType, String fileName);
+interface fileDetector {
+    void load(String fileType, String fileName);
 }
